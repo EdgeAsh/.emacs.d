@@ -32,10 +32,8 @@
     (when (not (package-installed-p pkg))
       (package-install pkg))))
 
-(require 'hungry-delete)
 (global-hungry-delete-mode t)
 
-(require 'smartparens-config)
 ;;(add-hook 'emacs-lisp-mode-hook 'smartparens-mode)
 (smartparens-global-mode t)
 
