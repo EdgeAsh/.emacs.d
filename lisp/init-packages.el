@@ -16,6 +16,7 @@
 			smartparens
 			js2-mode
 			popwin
+			reveal-in-osx-finder
 			) "Default packages")
 
 (setq package-selected-packages edge/packages)
