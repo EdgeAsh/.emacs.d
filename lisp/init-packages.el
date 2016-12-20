@@ -24,6 +24,7 @@
 			web-mode
 			expand-region
 			iedit
+			org-pomodoro
 			) "Default packages")
 
 (setq package-selected-packages edge/packages)
@@ -84,10 +85,6 @@
       (setq css-indent-offset (if (= css-indent-offset 2) 4 2)))
   
   (setq indent-tabs-mode nil))
-  
-(global-set-key (kbd "C-c t i") 'my-toggle-web-indent)
-
-(global-set-key (kbd "M-s i") 'counsel-imenu)
 
 (defun js2-imenu-make-index ()
   (interactive)
@@ -114,8 +111,6 @@
 ;;when require, wh(setq company-minimum-prefix-length 1)en not require
 (popwin-mode t)
 
-
-(global-set-key (kbd "C-=") 'er/expand-region)
-
+(require 'org-pomodoro)
 
 (provide 'init-packages)
