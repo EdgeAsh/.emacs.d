@@ -11,6 +11,9 @@
     ("a800120841da457aa2f86b98fb9fd8df8ba682cebde033d7dbf8077c1b7d677a" default)))
  '(org-agenda-files nil)
  '(org-pomodoro-long-break-length 40)
+ '(package-selected-packages
+   (quote
+    (evil company monokai-theme hungry-delete swiper counsel smartparens js2-mode popwin reveal-in-osx-finder web-mode expand-region iedit org-pomodoro helm-ag flycheck auto-yasnippet)))
  '(popwin:popup-window-position (quote right))
  '(popwin:popup-window-width 60))
 (custom-set-faces
