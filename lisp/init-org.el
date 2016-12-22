@@ -1,7 +1,7 @@
+(require 'org)
+
 (setq org-src-fontify-natively t)
 
-(with-eval-after-load 'org
-  
 (setq org-agenda-files '("~/.emacs.d"))
 
 (setq org-capture-templates
@@ -12,6 +12,5 @@
 	 "* TODO [#C] %?\n %(edge/retrieve-chrome-current-tab-url)\n %i\n %U"
 	 :empty-lines 1)
 	))
-  )
 
 (provide 'init-org)
