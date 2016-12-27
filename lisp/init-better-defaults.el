@@ -17,12 +17,19 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 
+(if (>= emacs-major-version 25)
 (define-advice show-paren-function (:around (fn) fix-show-paren-function)
   "Highlight enclosing paren"
   (cond ((looking-at-p "\\s(") (funcall fn))
 	(t (save-excursion
 	     (ignore-errors (backward-up-list))
 	     (funcall fn)))))
+;; (defadvice show-paren-function (around fix-show-paren-function activate)
+;;   (cond ((looking-at-p "\\s(") ad-do-it)
+;; 	(t (save-excursion
+;; 	     (ignore-errors (backward-up-list))
+;; 	     ad-to-it))))
+)
 
 (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
 

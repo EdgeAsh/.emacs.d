@@ -1,54 +1,6 @@
-(require 'cl)
-
-(when (>= emacs-major-version 24)
-  ;;(require 'package)
-  ;;(package-initialize)
-  ;;(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-  ;;(add-to-list 'package-archives '("melpa" . "https://elpa.popkit.org/packages/") t)
-  (add-to-list 'package-archives
-            '("popkit" . "https://elpa.popkit.org/packages/"))
-  )
-
-;;add whatever packages you want here
-(defvar edge/packages '(
-			company
-			monokai-theme
-			hungry-delete
-			swiper
-			counsel
-			smartparens
-			js2-mode
-			popwin
-			reveal-in-osx-finder
-			js2-refactor
-			web-mode
-			expand-region
-			iedit
-			org-pomodoro
-			helm-ag
-			flycheck
-			auto-yasnippet
-			evil
-			evil-leader
-			window-numbering
-			evil-surround
-			evil-nerd-commenter
-			which-key 
-			) "Default packages")
-
-(setq package-selected-packages edge/packages)
-
-(defun edge/packages-installed-p ()
-  (loop for pkg in edge/packages
-	when (not (package-installed-p pkg)) do (return nil)
-	finally (return t)))
-
-(unless (edge/packages-installed-p)
-  (message "%s" "Refreshing package database...")
-  (package-refresh-contents)
-  (dolist (pkg edge/packages)
-    (when (not (package-installed-p pkg))
-      (package-install pkg))))
+;;let emacs could find the execuable
+;; (when (memq window-system '(mac ns))
+;;   (exec-path-from-shell-initialize))
 
 (global-hungry-delete-mode t)
 
