@@ -21,5 +21,9 @@
 
 (setq custom-file (expand-file-name "lisp/custom.el" user-emacs-directory))
 
+(setq tramp-ssh-controlmaster-options
+      "-o Controlmaster=auto -o ControlPath='tramp.%%C' -o ControlPersist=no")
+
+
 (load-file custom-file)
 
